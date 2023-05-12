@@ -24,7 +24,7 @@ click any hotel for the room book user can see all the room that are vacant or b
 1.Create the user register page
 2.Create a user document from request body.
 3.Return HTTP status 201 on a successful user creation. Also return the user documents.
-The response should be a JSON object type [like](#successful register response structure)
+The response should be a JSON object type [like](###Successful Register Response Structure)
 4.Return HTTP status 400 if no params or invalid params received in request body.The response should be a JSON object like this
 
 
@@ -117,7 +117,7 @@ The response should be a JSON object type [like](#successful register response s
 - On a successfully Delete booking room data return proper message . The response should be a JSON object like this
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like this
 
-### Successful Register Response structure 
+### Successful Register Response Structure 
 ```yaml
 {
   "status": true,
