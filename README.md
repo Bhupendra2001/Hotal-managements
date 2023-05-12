@@ -361,7 +361,7 @@ The response should be a JSON object type like [this](#successful-register-respo
 }
 ```
 
-###  Successful Hotel Deleted  Response Structure
+###  Successful Hotel Deleted Response Structure
 ```yaml
 {
 status : true ,
