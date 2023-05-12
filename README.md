@@ -49,18 +49,18 @@ The response should be a JSON object type like [this](#successful-register-respo
 
 >GET  `/api/hotels/:id`
 - Get the hotel details by hotel id only admin allow this
-- On a successful get  hotel by hotelId  return hotel details. The response should be a JSON object like [this](#Successful-Hotels-Get-By-Id-Response-Structure)
+- On a successful get  hotel by hotelId  return hotel details. The response should be a JSON object like [this](#Successful-Hotel-Get-By-Id-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 
 >PUT  `/api/hotels/:id/users/:userId`
 - Update the hotel details by given hotelId. Only admin allow this.
-- On a successful update  hotel by hotelId  return updated hotel details. The response should be a JSON object like [this]
+- On a successful update  hotel by hotelId  return updated hotel details. The response should be a JSON object like [this](#Successful-Hotel-Update-By-Id-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 >DELETE  `/api/hotels/:id/users/:userId`
 - Delete the hotel details by given hotelId. Only admin allow this.
-- On a successful delete  hotel by hotelId  return  proper message. The response should be a JSON object like this
+- On a successful delete  hotel by hotelId  return  proper message. The response should be a JSON object like [this](#Successful-Hotel-Deleted-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
   
   
@@ -306,7 +306,7 @@ The response should be a JSON object type like [this](#successful-register-respo
   ]
 }
 ```
-### Successful Hotels Get By Id Response Structure
+### Successful Hotel Get By Id Response Structure
 
 ```yaml
 {
@@ -331,6 +331,41 @@ The response should be a JSON object type like [this](#successful-register-respo
     "updatedAt": "2023-04-25T05:05:26.569Z",
     "__v": 0
   }
+}
+```
+### Successful Hotel Update By Id Response Structure
+
+```yaml
+{
+  "status": true,
+  "data": {
+    "_id": "6444bdfde78b4ea3c41a362a",
+    "hotel_img": "https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/Hotel-Booking-Project/Olive-hotel-pics.png",
+    "hotel_uid": 351446,
+    "title": "Olive Kalyan Nager -By Embassy Group",
+    "city": "Bangalore",
+    "address": "No 715, 2nd Cross Rd, Kalyan nager, Bangalore",
+    "stars": 5,
+    "facilities": [
+      "air condtioning",
+      "private entrance",
+      "ensult bathroom",
+      "free wifi"
+    ],
+    "IsVacantRoom": true,
+    "roomsAvailableCount": 3,
+    "createdAt": "2023-04-23T05:11:25.882Z",
+    "updatedAt": "2023-04-25T05:05:26.569Z",
+    "__v": 0
+  }
+}
+```
+
+###  Successful Hotel Deleted  Response Structure
+```yaml
+{
+status : true ,
+message : "hotel deleted successfully"
 }
 ```
 
