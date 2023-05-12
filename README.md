@@ -102,19 +102,19 @@ The response should be a JSON object type like [this](#successful-register-respo
 >POST  `/api/bookrooms/rooms/:roomId/hotel/:hotelId/:userId`
 
 - Create the booked room API. Only Authenticated user booked room.
-- On a successfully  booking room  return booking room details. The response should be a JSON object like this
+- On a successfully  booking room  return booking room details. The response should be a JSON object like [this](#Successful-Booked-Room-Created-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 >PUT  `/api/bookrooms/:bookedId/:roomId`
 
 - Update the booked room data by booked roomId. Only Authorised user and Admin allow this.
-- On a successfully update booking room data return booking room details. The response should be a JSON object like this
+- On a successfully update booking room data return booking room details. The response should be a JSON object like [this](#Successful-Updated-BookedRoom-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 >Delete  `/api/bookrooms/:bookedId/:roomId/:hotelId/:userId`
 
 - Delete the booked room data by booked roomId. Only Authorised user and Admin allow this.
-- On a successfully Delete booking room data return proper message . The response should be a JSON object like this
+- On a successfully Delete booking room data return proper message . The response should be a JSON object like [this](#Successful-Booked-Room-Deleted-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 ### Successful Register Response Structure 
@@ -376,11 +376,11 @@ message : "hotel deleted successfully"
   status : true ,
    "data" : {
   "_id": "6445de5333a97c80614e6206",
-  "hotel_id": "6444bbc3e78b4ea3c41a3628"
+  "hotel_id": "6444bbc3e78b4ea3c41a3628",
   "price": 1300,
   "status": "vacant",
-  "createdAt": "2023-04-24T01:41:39.717Z"
-  "updatedAt": "2023-05-08T16:42:08.771Z"
+  "createdAt": "2023-04-24T01:41:39.717Z",
+  "updatedAt": "2023-05-08T16:42:08.771Z",
   "__v": 0,
   "info": {}
   }
@@ -479,6 +479,52 @@ status : true ,
 message : "Room deleted successfully"
 }
 ```
-
+###  Successful Booked Room Created Response Structure
+```yaml
+{
+status : true ,
+ "data" : {
+  "_id":  "645c739744c8c6555a923f47"
+  "cust_name": "harsh yadav",
+  "address": "delhi",
+  "id_proof": "aadhar",
+  "uid": "4455 7798 9933",
+  "booked_from": "2023-05-12T00:00:00.000Z",
+  "booked_to": "2023-05-14T00:00:00.000Z",
+  "booked_at": "2023-05-11T04:48:57.114Z",
+  "userId": "645924d946eb89d7a70fdf8a",
+  "createdAt": "2023-05-11T04:48:23.352Z",
+  "updatedAt": "2023-05-11T04:48:57.115Z",
+  "__v": 0
+}
+}
+```
+###  Successful Updated BookedRoom Response Structure
+```yaml
+{
+status : true ,
+ "data" : {
+  "_id":  "645c739744c8c6555a923f47"
+  "cust_name": "harsh yadav",
+  "address": "delhi",
+  "id_proof": "aadhar",
+  "uid": "4455 7798 9933",
+  "booked_from": "2023-05-12T00:00:00.000Z",
+  "booked_to": "2023-05-14T00:00:00.000Z",
+  "booked_at": "2023-05-11T04:48:57.114Z",
+  "userId": "645924d946eb89d7a70fdf8a",
+  "createdAt": "2023-05-11T04:48:23.352Z",
+  "updatedAt": "2023-05-11T04:48:57.115Z",
+  "__v": 0
+}
+}
+```
+###  Successful Booked Room Deleted Response Structure
+```yaml
+{
+status : true ,
+message : " Booked Room deleted successfully"
+}
+```
 
 
