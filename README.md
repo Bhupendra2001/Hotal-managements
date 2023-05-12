@@ -68,33 +68,33 @@ The response should be a JSON object type like [this](#successful-register-respo
 
 >POST  `/api/rooms/hotel/:hotelId/users/:userId`
 - Create the Room for perticuler hotel and given all room details. Only admin allow this.
-- On a successful create  room  return room details. The response should be a JSON object like this
+- On a successful create  room  return room details. The response should be a JSON object like [this](#Successful-Room-Created-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 
 >GET  `/api/rooms/hotel/:hotelId`
 - Get ALL the room details for any user
-- On a successful get room  return room details. The response should be a JSON object like this
+- On a successful get room  return room details. The response should be a JSON object like [this](#Successful-Get-ALL-Rooms-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 
 >Get  `/api/rooms/:id/hotel/:hotelId/users/:userId`
 
 - Get the room by given roomId and hotelId
-- On a successful get room  return room details. The response should be a JSON object like this
+- On a successful get room  return room details. The response should be a JSON object like [this](#Successful-Get-Room-By-Id-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 >PUT  `/api/rooms/:id/hotel/:hotelId/users/:userId`
 
 - Update the room data by given roomId and hotelId
-- On a successful  update room  return updated room details. The response should be a JSON object like this
+- On a successful  update room  return updated room details. The response should be a JSON object like [this](#Successful-Get-Room-By-Id-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 
 >DELETE   `/api/rooms/:id/hotel/:hotelId/users/:userId`
 
 - Delete the room data by given roomId and hotelId
-- On a successful  delete room  return proper message. The response should be a JSON object like this
+- On a successful  delete room  return proper message. The response should be a JSON object like [this](#Successful-Room-Deleted-Response-Structure)
 - If the credentials are incorrect return a suitable error message with a valid HTTP status code. The response should be a JSON object like [this](#error-response-structure)
 
 #  Booking Room APIs
@@ -366,6 +366,117 @@ The response should be a JSON object type like [this](#successful-register-respo
 {
 status : true ,
 message : "hotel deleted successfully"
+}
+```
+
+### Successful Room Created Response Structure
+
+```yaml
+{
+  status : true ,
+   "data" : {
+  "_id": "6445de5333a97c80614e6206",
+  "hotel_id": "6444bbc3e78b4ea3c41a3628"
+  "price": 1300,
+  "status": "vacant",
+  "createdAt": "2023-04-24T01:41:39.717Z"
+  "updatedAt": "2023-05-08T16:42:08.771Z"
+  "__v": 0,
+  "info": {}
+  }
+}
+```
+### Successful Get ALL Rooms Response Structure
+```yaml
+{
+  "status": true,
+  "data": [
+    {
+      "_id": "6445e0d1d6aa46229ad9af11",
+      "hotel_id": "6444cb676735ab0c37773d2b",
+      "price": 1300,
+      "status": "vacant",
+      "createdAt": "2023-04-24T01:52:17.279Z",
+      "updatedAt": "2023-05-07T05:16:47.147Z",
+      "__v": 0,
+      "info": {
+        "cust_name": "shivani namdev",
+        "address": "lalmati jabalpur",
+        "id_proof": "aadhar",
+        "uid": "3575 7834 6066",
+        "booked_from": "2023-05-08",
+        "booked_to": "2023-05-09",
+        "booked_at": "2023-05-07T05:16:47.145Z"
+      }
+    },
+    {
+      "_id": "6445e0d7d6aa46229ad9af13",
+      "hotel_id": "6444cb676735ab0c37773d2b",
+      "price": 1400,
+      "status": "vacant",
+      "createdAt": "2023-04-24T01:52:23.824Z",
+      "updatedAt": "2023-04-25T05:10:59.632Z",
+      "__v": 0,
+      "info": {
+        "cust_name": "rahul verma",
+        "address": "lalmati jabalpur",
+        "id_proof": "aadhar",
+        "uid": "3375 9834 4012",
+        "booked_from": "2023-04-26",
+        "booked_to": "2023-04-27",
+        "booked_at": "2023-04-25T05:10:59.619Z"
+      }
+    },
+    {
+      "_id": "6445e2128edf481c65f548d4",
+      "hotel_id": "6444cb676735ab0c37773d2b",
+      "price": 1400,
+      "status": "vacant",
+      "createdAt": "2023-04-24T01:57:38.786Z",
+      "updatedAt": "2023-04-25T02:58:45.261Z",
+      "__v": 0,
+      "info": {
+        "cust_name": "rahul verma",
+        "address": "lalmati jabalpur",
+        "id_proof": "aadhar",
+        "uid": "3375 9834 6012",
+        "booked_from": "2023-04-26",
+        "booked_to": "2023-04-27",
+        "booked_at": "2023-04-25T02:58:45.252Z"
+      }
+    }
+  ]
+}
+```
+### Successful Get Room By Id Response Structure
+```yaml
+ {
+    "status": true,
+    "data"  : {
+      "_id": "6445e2128edf481c65f548d4",
+      "hotel_id": "6444cb676735ab0c37773d2b",
+      "price": 1400,
+      "status": "vacant",
+      "createdAt": "2023-04-24T01:57:38.786Z",
+      "updatedAt": "2023-04-25T02:58:45.261Z",
+      "__v": 0,
+      "info": {
+        "cust_name": "rahul verma",
+        "address": "lalmati jabalpur",
+        "id_proof": "aadhar",
+        "uid": "3375 9834 6012",
+        "booked_from": "2023-04-26",
+        "booked_to": "2023-04-27",
+        "booked_at": "2023-04-25T02:58:45.252Z"
+      }
+    }
+}
+```
+###  Successful Room Deleted Response Structure
+```yaml
+{
+status : true ,
+message : "Room deleted successfully"
 }
 ```
 
